@@ -2,6 +2,7 @@ package com.example.justjava3;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import java.text.NumberFormat;
@@ -12,6 +13,7 @@ import java.text.NumberFormat;
 public class MainActivity extends AppCompatActivity {
 
     int quantity;
+    String message;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        displayPrice(quantity * 5);
+        order(quantity * 5);
     }
 
 
@@ -42,9 +44,11 @@ public class MainActivity extends AppCompatActivity {
     /**
      * This method displays the given price on the screen.
      */
-    private void displayPrice(int number) {
+    private void order(int number) {
         TextView priceTextView = (TextView) findViewById(R.id.order_summary_text_view);
         priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
+        message = "Add whipped cream? " + hasWhip() + "\nAdd chocolate? " + hasChocolate() + "\nQuantity: " + quantity + "\nTotal: $" + (quantity * 5) + "\nThank you!";
+        displayMessage(message);
     }
 
 
@@ -59,6 +63,34 @@ public class MainActivity extends AppCompatActivity {
         display(quantity);
     }
 
+    public void displayMessage(String message)
+    {
+        TextView orderSummaryTextView = (TextView) findViewById(R.id.order_summary_text_view);
+        orderSummaryTextView.setText(message);
+    }
+
+
+
+    public boolean hasWhip()
+    {
+        boolean hasWhip = false;
+
+        CheckBox whippedCreamCheckbox = (CheckBox) findViewById(R.id.whippedcream_checkbox);
+        if (whippedCreamCheckbox.isChecked())
+            hasWhip = true;
+
+          return hasWhip;
+    }
+
+    public boolean hasChocolate()
+    {
+        boolean hasChocolate = false;
+        CheckBox chocolateCheckbox = (CheckBox) findViewById(R.id.chocolate_checkbox);
+        if (chocolateCheckbox.isChecked())
+            hasChocolate = true;
+
+        return hasChocolate;
+    }
 }
 
 

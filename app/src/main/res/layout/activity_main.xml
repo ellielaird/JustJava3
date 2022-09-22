@@ -12,13 +12,15 @@
         android:layout_height="wrap_content"
         android:text="Quantity"
         android:paddingBottom="16sp"
+        android:layout_below="@+id/chocolate_checkbox"
         />
 
     <LinearLayout
         android:id="@+id/LinearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/TextViewQ" >
+        android:layout_below="@+id/TextViewQ"
+        >
 
 
         <Button
@@ -88,6 +90,38 @@
         android:layout_below="@+id/order_summary_text_view"
         />
 
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/whippedcream_checkbox"
+        android:text="Whipped Cream"
+        android:paddingHorizontal="24dp"
+        android:layout_below="@+id/toppings"
+        />
 
+    <CheckBox
+        android:id="@+id/chocolate_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/whippedcream_checkbox"
+        android:layout_marginTop="-20dp"
+        android:paddingHorizontal="24dp"
+        android:text="Chocolate" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Toppings"
+        android:id="@+id/toppings"
+        android:layout_below="@+id/insert_name"
+        />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/insert_name"
+        android:inputType="textMultiLine"
+        android:hint="Name"
+        />
 
 </RelativeLayout>
