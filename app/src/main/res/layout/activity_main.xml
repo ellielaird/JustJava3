@@ -83,12 +83,11 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/order_summary_text_view"
         android:backgroundTint="#868A85"
         android:onClick="submitOrder"
         android:text="ORDER"
-        android:textColor="@color/black"
-        android:layout_below="@+id/order_summary_text_view"
-        />
+        android:textColor="@color/black" />
 
     <CheckBox
         android:layout_width="wrap_content"
